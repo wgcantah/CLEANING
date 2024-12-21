@@ -1,0 +1,60 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# CLEANING
+
+- CLEANING is an R package mainly for checking and removal of outliers from data set. It helps to make the identification and deletion of outliers from data frame much more easier. 
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of CLEANING is to reduce the stress associated with the identification and removal of Outliers from Data Frames. 
+
+## Installation
+
+You can install the development version of CLEANING like so:
+
+``` {r}
+library(devtools)
+#install_github("wgcantah/CLEANING")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(CLEANING)
+## basic example code
+```
+
+What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+
+```{r}
+df <- data.frame( id = 1:10, 
+                  value = c(10, 20, 30, 40, 50, 60, 70, 80, 90, 100), 
+                  category = c("A", "B", "A", "B", "A", "B", "A", "B", "A", "B") 
+                  ) 
+# Generate Z-scores for the 'value' column 
+z_score_df <- zscore(df, "value")
+# View the data frame with Z-scores 
+print(z_score_df)
+
+# Normalize the numeric columns using Z-score normalization 
+normalized_df <- normalise(df) 
+# View the normalized data frame 
+print(normalized_df)
+```
+
+
